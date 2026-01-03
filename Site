@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convite de Casamento – Huambo, Angola</title>
+  <style>
+    body {margin:0;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:#f7f4ef;color:#3e3e3e;}
+    .hero {text-align:center;padding:70px 20px;background:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),url('https://images.unsplash.com/photo-1522673607200-164d1b6d1a9c?auto=format&fit=crop&w=1200&q=60') center/cover no-repeat;color:white;}
+    .hero h1{font-size:42px;margin-bottom:10px;}
+    .hero p{font-size:18px;}
+    .container{max-width:950px;margin:30px auto;padding:20px;text-align:center;}
+    .section{background:white;margin:20px 0;padding:25px;border-radius:12px;box-shadow:0 0 10px rgba(0,0,0,0.1);} 
+    h2{margin-bottom:10px;}
+    .btn{display:inline-block;margin:10px;padding:14px 22px;background:#7c6e4f;color:white;text-decoration:none;border-radius:30px;font-size:16px;transition:0.3s;}
+    .btn:hover{background:#5e533a;}
+    /* Countdown */
+    .countdown{display:flex;justify-content:center;gap:20px;font-size:20px;margin-top:15px;flex-wrap:wrap;}
+    .countdown div{background:#7c6e4f;color:white;border-radius:10px;padding:15px 25px;min-width:90px;}
+    /* RSVP form */
+    form{max-width:480px;margin:0 auto;text-align:left;}
+    input, select, textarea{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #ccc;}
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:10px;}
+    .gallery img{width:100%;border-radius:10px;object-fit:cover;height:180px;}
+    footer{text-align:center;padding:20px;color:#777;font-size:14px;}
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>Nome ❤️ Nome</h1>
+    <p>Vão casar em Huambo, Angola — e querem partilhar este momento consigo</p>
+  </section>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>Data do Casamento</h2>
+      <p><strong>Dia:</strong> DD / MM / AAAA</p>
+      <p><strong>Hora:</strong> 00:00</p>
+
+      <div class="countdown">
+        <div><span id="days">0</span><br>Dias</div>
+        <div><span id="hours">0</span><br>Horas</div>
+        <div><span id="minutes">0</span><br>Minutos</div>
+        <div><span id="seconds">0</span><br>Segundos</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Local</h2>
+      <p><strong>Huambo • Angola</strong></p>
+      <p>Nome do Local / Igreja / Salão</p>
+      <a class="btn" href="#" target="_blank">Ver Localização no Google Maps</a>
+    </div>
+
+    <div class="section">
+      <h2>RSVP – Confirmação de Presença</h2>
+      <p>Por favor, confirme a sua presença preenchendo o formulário abaixo.</p>
+
+      <!-- FORMULÁRIO RSVP  -->
+      <!-- Opção 1: enviar para email (substitua o email abaixo) -->
+      <form action="mailto:SEUEMAIL@exemplo.com" method="post" enctype="text/plain">
+        <label>Nome Completo</label>
+        <input type="text" name="Nome" required>
+
+        <label>Telefone / WhatsApp</label>
+        <input type="text" name="Telefone" required>
+
+        <label>Confirma Presença?</label>
+        <select name="Presenca" required>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+
+        <label>Mensagem</label>
+        <textarea name="Mensagem" rows="4"></textarea>
+
+        <button class="btn" type="submit">Enviar Confirmação</button>
+      </form>
+
+      <p>Ou, se preferir, confirme também pelo WhatsApp:</p>
+      <!-- Substitua 244XXXXXXXXX pelo número WhatsApp com código de país -->
+      <a class="btn" href="https://wa.me/244XXXXXXXXX" target="_blank">Confirmar via WhatsApp</a>
+    </div>
+
+    <div class="section">
+      <h2>Galeria de Fotos</h2>
+      <p>Alguns momentos do nosso amor até aqui.</p>
+
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1520778142481-8de037dc63d2?auto=format&fit=crop&w=600&q=60" alt="foto 1">
+        <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=600&q=60" alt="foto 2">
+        <img src="https://images.unsplash.com/photo-1519741491051-39e114e6b9bb?auto=format&fit=crop&w=600&q=60" alt="foto 3">
+        <img src="https://images.unsplash.com/photo-1529634899530-046d717d4c3f?auto=format&fit=crop&w=600&q=60" alt="foto 4">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Mensagem aos Convidados</h2>
+      <p>Será uma honra ter a sua presença neste dia tão especial. Obrigado por fazer parte da nossa história.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    Convite digital de casamento – Huambo, Angola
+  </footer>
+
+  <script>
+    // CONFIGURE A DATA AQUI (AAAA-MM-DD HH:MM:SS)
+    const weddingDate = new Date('2026-12-31 00:00:00').getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.querySelector('.countdown').innerHTML = "O grande dia chegou!";
+        return;
+      }
+
+      document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000);
+    }, 1000);
+  </script>
+
+</body>
+</htm
